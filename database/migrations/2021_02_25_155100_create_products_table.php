@@ -17,8 +17,8 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->float('price');
-            $table->float('stock');
-            $table->float('company-id');
+            $table->integer('stock');
+            $table->foreignId('company_id')->constrained();
             $table->timestamps();
         });
     }
