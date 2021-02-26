@@ -17,6 +17,7 @@ class CreateStoresTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('address');
+            $table->foreignId('owner_id')->constrained();
             $table->timestamps();
         });
     }

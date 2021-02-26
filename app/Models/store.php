@@ -9,13 +9,15 @@ class store extends Model
 {
     use HasFactory;
 
-    public function owner(){
-        return $this->hasMany(owner::Class);
+    public function owner()
+    {
+        return $this->hasMany(Owner::Class);
 
     }
 
-    public function product(){
-        return $this->hasMany(product::Class);
+    public function product()
+    {
+        return $this->belongsToMany(Product::Class,'stores_products');
 
     }
 }

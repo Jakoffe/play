@@ -9,13 +9,14 @@ class product extends Model
 {
     use HasFactory;
 
-    public function company(){
-        return $this->hasMany(company::class);
-
+    public function companies()
+    {
+        return $this->hasMany(Company::class);
     }
 
-    public function store(){
-        return $this->hasMany(store::Class);
+    public function stores()
+    {
+        return $this->belongsToMany(Store::Class,'stores_products');
 
     }
 }

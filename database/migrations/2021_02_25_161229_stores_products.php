@@ -13,7 +13,12 @@ class StoresProducts extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('stores_products', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('product_id')->constrained();
+            $table->foreignId('store_id')->constrained();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class StoresProducts extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('stores_products');
     }
 }

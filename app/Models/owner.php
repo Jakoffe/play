@@ -9,8 +9,9 @@ class owner extends Model
 {
     use HasFactory;
 
-    public function store(){
+    public function stores()
+    {
 
-        return $this->belongsTo(store::Class);
+        return $this->hasMany(Store::Class);
     }
 }
